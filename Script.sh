@@ -56,7 +56,7 @@ for f in ${WORK_FOLDER}/dns-raw/*; do
 	done < ${WORK_FOLDER}/dns-raw/${f##*/}
 
 		# Parse through TMP File for eleminating Cname records
-		cat ${TMP_UPSTREAM_FILE} | grep -v '\.$' | sort | uniq -u > ${UPSTREAM_CONFIG_FILE}
+		cat ${TMP_UPSTREAM_FILE} | grep -v '\.$' | sort | uniq > ${UPSTREAM_CONFIG_FILE}
 
 		if [ -f '${UPSTREAM_CONFIG_FILE}' ]; then
 			rm -rf ${TMP_UPSTREAM_FILE}
